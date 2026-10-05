@@ -1,11 +1,10 @@
-# Título Proyecto
+# Pokehub
 
-## Miembros del grupo LX-XXX-X (sustituir)
+## Miembros del grupo L2-ABS-8
 
-1. Apellidos, Nombre
-1. Apellidos, Nombre
-1. Apellidos, Nombre
-1. Apellidos, Nombre
+1. Becerra Blanco, Pablo
+2. Aboza Gilabert, Daniel
+3. Fernández Ruiz, Óscar
 
 ## 1. Introducción al problema
 
