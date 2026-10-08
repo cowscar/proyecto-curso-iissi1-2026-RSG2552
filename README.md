@@ -27,9 +27,9 @@
 #### R.F.01. Buscar y filtrar cartas en el catálogo
 Como usuario visitante o comprador
 
-quiero buscar cartas aplicando filtros por nombre, expansión y rareza
+quiero buscar cartas mediante filtros por nombre, expansión y rareza
 
-para consultar rápidamente las ofertas disponibles y su precio mínimo.
+para consultar rápidamente las ofertas.
 
 **Prueba de aceptación**
 - Descripción de la primera comprobación a realizar
@@ -40,9 +40,9 @@ para consultar rápidamente las ofertas disponibles y su precio mínimo.
 #### R.F.02. Publicar un ejemplar a la venta
 Como vendedor
 
-quiero crear una oferta vinculada a una carta del catálogo indicando su estado de conservación, fotos y precio
+quiero crear una oferta de una carta del catálogo donde se indica su estado de conservación, fotos de la carta y el precio
 
-para ponerla a disposición de otros usuarios en la plataforma.
+para ponerla en venta en la página.
 
 **Prueba de aceptación**
 - Descripción de la primera comprobación a realizar
@@ -55,7 +55,7 @@ Como comprador
 
 quiero formalizar el pago de las cartas seleccionadas
 
-para asegurar el precio fijado y descontar de inmediato las unidades del sto
+para asegurar el precio fijado y descontar de inmediato las unidades del stock.
 
 **Prueba de aceptación**
 - Descripción de la primera comprobación a realizar
@@ -66,7 +66,7 @@ para asegurar el precio fijado y descontar de inmediato las unidades del sto
 #### R.F.04. Gestionar el seguimiento del envío
 Como vendedor
 
-quiero actualizar el estado de la compra e introducir el código de seguimiento logístico
+quiero actualizar el estado de la compra e introducir el código de envío
 
 para que el comprador pueda rastrear la entrega de su paquete.
 
@@ -94,7 +94,7 @@ Como comprador
 
 quiero añadir ejemplares a mi cesta, modificar unidades o eliminarlos
 
-para revisar el coste total de mis artículos antes de formalizar la compra.
+para revisar el precio total de mis artículos antes de realizar la compra.
 
 **Prueba de aceptación**
 - Descripción de la primera comprobación a realizar
@@ -133,7 +133,7 @@ Como usuario del sistema
 
 quiero disponer de la ficha técnica de cada carta (nombre, numeración, tipo y rareza)
 
-para identificar inequívocamente el artículo canónico al comprar o vender.
+para identificar correctamente el artículo al comprar o vender.
 
 **Prueba de aceptación**
 - Descripción de la primera comprobación a realizar
@@ -157,7 +157,7 @@ Como comprador
 
 quiero que el sistema conserve los ejemplares seleccionados y las unidades solicitadas
 
-para calcular el importe provisional y mantener los artículos listos antes de pagar.
+para calcular el precio provisional y mantener los artículos listos antes de pagar.
 
 **Prueba de aceptación**
 - Descripción de la primera comprobación a realizar
@@ -169,7 +169,7 @@ Como comprador o vendedor
 
 quiero registrar el desglose del pedido con los precios congelados, estado y datos de envío
 
-para tener un justificante histórico de la transacción y gestionar su entrega logística.
+para tener una factura de la transacción y gestionar su entrega.
 
 **Prueba de aceptación**
 - Descripción de la primera comprobación a realizar
@@ -182,16 +182,16 @@ para tener un justificante histórico de la transacción y gestionar su entrega 
 Un usuario registrado no puede añadir al carrito ni adquirir ejemplares en venta publicados por él mismo; el identificador del usuario comprador debe ser estrictamente distinto al identificador del vendedor propietario de la publicación.
 
 #### R.N.02. Inmutabilidad del precio de compra
-El precio unitario registrado en una línea de pedido debe capturar y congelar el valor exacto de la publicación en el momento en que se formaliza el pago, garantizando que posteriores cambios de precio aplicados por el vendedor no alteren los importes de pedidos ya creados.
+El precio unitario registrado en una línea de pedido debe capturar y congelar el valor exacto de la publicación en el momento en que se formaliza el pago, así, si el vendedor modifica el precio original, el de la línea de pedido ya creada no se ve afectado.
 
 #### R.N.03. Control de stock y agotamiento de oferta
-La cantidad solicitada de un artículo no puede superar el stock disponible de la publicación. Tras confirmarse el pago, el stock se reduce de forma automática según las unidades compradas; si el stock resultante es cero, la publicación pasa inmediatamente al estado de "Agotada" o "Vendida", ocultándose de las búsquedas públicas del catálogo.
+La cantidad solicitada de un artículo no puede superar el stock disponible de la publicación. Tras confirmarse el pago, el stock se reduce de forma automática según las unidades compradas; si el stock resultante es cero, la publicación pasa inmediatamente al estado de "Agotada", ocultándose del catálogo.
 
 #### R.N.04. Elegibilidad y unicidad de valoraciones
-Únicamente el usuario que figura como comprador puede emitir una reseña sobre una transacción, siempre que el pedido se encuentre en estado "Entregado". Asimismo, el sistema solo permite registrar una única valoración por pedido, bloqueando cualquier intento de calificación duplicada.
+Únicamente el usuario que figura como comprador puede emitir una reseña sobre una transacción, siempre que el pedido se encuentre en estado "Entregado". Además, el sistema solo permite registrar una única valoración por pedido.
 
 #### R.N.05. Unicidad de códigos de certificación
-En los ejemplares publicados como cartas graduadas, el número de serie asignado por la empresa certificadora oficial (como PSA, BGS o CGC) debe ser unívoco en el sistema, impidiendo la existencia de dos publicaciones activas simultáneas que compartan la misma entidad evaluadora y el mismo código de certificación.
+En los ejemplares publicados como cartas gradeada, el código de certificación asignado por la empresa certificadora oficial (como PSA, BGS o CGC) debe ser único en el sistema, por lo que no pueden existir dos publicaciones activas simultáneas que compartan la misma empresa y el mismo código de certificación.
 
 ### 4.2. Mapa de historias de usuario (opcional)
 
@@ -209,19 +209,11 @@ para consultar las cartas y ofertas de forma fluida sin tiempos de espera frustr
 
 Como usuario registrado
 
-quiero que mis contraseñas se almacenen cifradas y la navegación web viaje cifrada por HTTPS
+quiero que mis contraseñas estén cifradas y la navegación web sea segura,
 
-para proteger mis datos personales y de acceso frente a interceptaciones o accesos no autorizados.
+para proteger mis datos personales y de acceso frente accesos no autorizados.
 
-#### R.N.F. 03. Diseño adaptable a dispositivos móviles
-
-Como usuario móvil
-
-quiero que la interfaz visual se ajuste automáticamente a cualquier tamaño de pantalla (móvil, tablet y escritorio)
-
-para gestionar mis compras y ventas cómodamente desde cualquier dispositivo.
-
-#### R.N.F. 04. Disponibilidad del servicio y copias de respaldo
+#### R.N.F. 03. Disponibilidad del servicio y copias de respaldo
 
 Como usuario de la plataforma
 
@@ -229,7 +221,7 @@ quiero que la web guarde copias de seguridad de manera automática
 
 para acceder a mis pedidos y catálogo en cualquier momento sin que estos se pierdan.
 
-#### R.N.F. 05. Compatibilidad entre navegadores web
+#### R.N.F. 04. Compatibilidad entre navegadores web
 
 Como usuario del sistema
 
@@ -237,7 +229,7 @@ quiero que la aplicación pueda funcionar en distintos navegadores (como Chrome,
 
 para operar con normalidad sin requerir configuraciones adicionales.
 
-#### R.N.F. 06. Integridad transaccional del stock
+#### R.N.F. 05. Integridad transaccional del stock
 
 Como comprador
 
