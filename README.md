@@ -225,17 +225,17 @@ para gestionar mis compras y ventas cómodamente desde cualquier dispositivo.
 
 Como usuario de la plataforma
 
-quiero que la web mantenga una disponibilidad constante y cuente con copias de seguridad automáticas
+quiero que la web guarde copias de seguridad de manera automática
 
-para acceder a mis pedidos y catálogo en cualquier momento sin riesgo de pérdida de información.
+para acceder a mis pedidos y catálogo en cualquier momento sin que estos se pierdan.
 
 #### R.N.F. 05. Compatibilidad entre navegadores web
 
 Como usuario del sistema
 
-quiero que la aplicación funcione y se visualice de manera consistente en los principales navegadores (Chrome, Firefox, Safari y Edge)
+quiero que la aplicación pueda funcionar en distintos navegadores (como Chrome, Firefox, Safari, etc)
 
-para operar con normalidad sin requerir extensiones o configuraciones adicionales.
+para operar con normalidad sin requerir configuraciones adicionales.
 
 #### R.N.F. 06. Integridad transaccional del stock
 
