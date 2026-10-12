@@ -8,7 +8,23 @@
 
 ## 1. Introducción al problema
 
-- Descripción del problema para poner en contexto el proyecto, incluyendo información sobre los clientes y usuarios, la situación actual, problemas, expectativas, etc. Se valorará la presencia de información multimedia (fotos, gráficos, documentos escaneados, etc.).
+El coleccionismo y comercio de cartas de Pokémon está teniendo un crecimiento exponencial, sobre todo en el mercado internacional de segunda mano. Este tipo de transacciones se realiza con frecuencia mediante plataformas de segunda mano o foros no especializados en el sector, donde conviven tanto usuarios interesados únicamente en explorar o consultar colecciones como usuarios interesados en la compra-venta.
+
+Las actividades más comunes en este tipo de webs tratan desde la consulta de colecciones oficiales y la búsqueda de publicaciones individuales hasta la negociación del precio, el pago, el envio del ejemplar y el seguimiento de este.
+
+La falta de una herramienta dedicada específicamente al ecosistema de las carta de Pokémon conlleva una serie de ineficiencias y problemas asociados, como por ejemplo:
+  1) Búsqueda e identificación imprecisas: La ausencia de filtros específicos para cada expansión/colección, número de carta, rareza y otra larga lista de aspectos claves de las cartas dificultan que los compradores consulten y localicen rápidamente las ofertas deseadas dentro del catálogo.
+  2) Poca fiabilidad en las características del ejemplar: En la mayoría de plataformas resulta complejo y poco fiable detallar aspectos específicos clave como el estado de conservación de la carta, el idioma o la presencia de certificaciones oficiales de autenticidad.
+  3) Variabilidad de precios en la compra: Al tramitar compras, la modificación del precio por parte del vendedor antes o durante el proceso genera conflictos sobre el importe exacto acordado en la transacción.
+  4) Falta de seguimiento al pedido y informes de reputación: Los compradores sufren la falta de seguimiento claro en los envíos y carecen de un sistema transparente de valoraciones que limite las reseñas únicamente a pedidos efectivamente entregados y a una sola reseña por transacción.
+
+Nuestro sistema esta concebido como una plataforma orientada a resolver las necesidades de tres usuarios principales:
+  1) Visitantes y coleccionistas: Consultaran información técnica
+  2) Compradores: Gestionan el carrito de compra
+  3) Vendedores: Necesitan registrar sus ejemplares así como el estado de sus envíos.
+Todos estos usuarios se explicaran con más detalle en los apartados posteriores.
+
+Nuestra plataforma Pokehub dará respuesta a estas espectativas garantizando la integridad del stock, asegurando la inmutabilidad de los precios al formalizar el pedido, aplicando códigos de certificación de las cartas gradeadas, restringiendo las autocompras, respaldando la seguridad de los datos de nuestros usuarios.
 
 ## 2. Glosario de términos
 
