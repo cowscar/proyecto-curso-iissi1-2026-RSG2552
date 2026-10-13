@@ -73,6 +73,23 @@ La aplicación debe ser completamente accesible a través de navegadores web est
 El sistema debe garantizar el cumplimiento de la normativa vigente en materia de protección de datos, asegurando el tratamiento confidencial de la información personal de los usuarios (direcciones de envío, nombres y correos), el cifrado en el almacenamiento de credenciales y la restricción de acceso a información privada exclusivamente a las partes involucradas en cada pedido.
 
 ### 3.2. Usuarios del sistema
+**Usuario visitante**
+Es cualquier persona que accede a la plataforma web sin haber iniciado sesión o sin disponer de una cuenta. Solo tiene acceso a la información pública.
+
+**Usuario Registrado**
+Es un usuario que ha completado el proceso de registro e inicio de sesión en la plataforma. Sobre este usuario se construirán las entidades según el rol que tengan como comprador/vendedor.
+Este usuario tendrá acceso a la gestión de sus datos personales aparte de la información pública.
+
+**Comprador** 
+Es cualquier usuario registrado que utiliza la plataforma con el propósito de adquirir ejemplares de cartas físicas ofertados por otros usuarios. Tendrá acceso a herramientas de gestión de compras, carrito y recepción de productos.
+Restricción: No puede añadir al carrito ni adquirir ejemplares creados por él mismo.
+
+**Vendedor**
+Es cualquier usuario registrado que pone a disposición del mercado ejemplares físicos de sus cartas Pokémon para su venta. Tiene acceso a herramientas de publicación, gestión de inventario/stock y logística de envíos.
+Restricción: El vendedor no puede comprar sus propias publicaciones.
+
+**Administrador**
+Es el responsable de velar por la seguridad de la información y la continuidad del servicio. Tiene acceso administrativo a nivel de datos e infraestructura.
 
 ## 4. Catálogo de requisitos
 
