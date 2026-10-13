@@ -41,11 +41,11 @@ Nuestra plataforma Pokehub dará respuesta a estas espectativas garantizando la 
 | **Empresa Certificadora / Empresa de gradeo** | Entidad externa e independiente (como PSA, Beckett/BGS o CGC) dedicada a autenticar cartas coleccionables, evaluar su estado de conservación microscópico y encapsularlas de forma permanente. | <img width="512" height="512" alt="Empresa de gradeo" src="https://github.com/user-attachments/assets/a8cda587-b4a0-44b8-89e6-a1722e2e3a27" />|
 | **Estado de Conservación** | Métrica estándar utilizada en el mercado secundario para clasificar el desgaste físico de una carta no gradeada. Las categorías habituales incluyen Mint/Near Mint (NM, impecable o con desgaste casi imperceptible), Lightly Played (LP, marcas leves o micro-rozaduras), Moderately Played (MP, bordes blanqueados o pliegues menores) y Damaged/Poor (daños severos, arrugas o manchas). | <img width="47" height="98" alt="Estado" src="https://github.com/user-attachments/assets/40f0c322-dfd3-4f33-a924-c80ba4d54024" />|
 | **Graduación (Grading)** | Calificación numérica (en una escala del 1 al 10) otorgada por una empresa certificadora que puntua el centrado, las esquinas, los bordes y la superficie de la carta física. | <img width="97" height="46" alt="Gradeo" src="https://github.com/user-attachments/assets/65985731-c8f6-4bce-a65a-9eb6e4ef8f58" />|
-| **Idioma de Impresión** | Lenguaje en el que fue fabricada la carta. Afecta directamente al valor de mercado del artículo; las impresiones más cotizadas y comercializadas son en japonés (JP) e inglés (EN), seguidas por las ediciones en español (ES) y otros idiomas europeos. | <img width="52" height="26" alt="Idioma" src="https://github.com/user-attachments/assets/23ea6689-fc3e-4e14-88da-a3a9fcf23e0c" />|
-| **Número de Carta** | Fracción impresa en la esquina inferior de la carta que indica su posición respecto al total oficial del set (por ejemplo, 025/165). | <img width="50" height="24" alt="Número de carta" src="https://github.com/user-attachments/assets/a428dea9-ffce-45fa-ba42-cc82f3de51d2" />|
+| **Idioma de Impresión** | Lenguaje en el que fue fabricada la carta. Afecta directamente al valor de mercado del artículo; las impresiones más cotizadas y comercializadas son en japonés (JP) e inglés (EN), seguidas por las ediciones en español (ES) y otros idiomas europeos. | <img width="104" height="52" alt="Idioma" src="https://github.com/user-attachments/assets/23ea6689-fc3e-4e14-88da-a3a9fcf23e0c" />|
+| **Número de Carta** | Fracción impresa en la esquina inferior de la carta que indica su posición respecto al total oficial del set (por ejemplo, 025/165). | <img width="100" height="48" alt="Número de carta" src="https://github.com/user-attachments/assets/a428dea9-ffce-45fa-ba42-cc82f3de51d2" />|
 | **Número de Certificación** | Código único e irrepetible emitido por la empresa certificadora e impreso en la etiqueta del slab. Sirve para validar la autenticidad del ejemplar en la base de datos pública del gradeador. | <img width="136" height="102" alt="Número certificación" src="https://github.com/user-attachments/assets/1fa75b86-4722-4209-b70d-69d22e7331e3" />|
-| **Rareza** | Categorización asignada oficialmente a una carta que determina su probabilidad de aparición en sobres de cartas (Común, Infrecuente, Holo Rare, Ultra Rare, Illustration rare, Special Ilustration Rare, Hyper Rare, etc...). | <img width="30" height="21" alt="image" src="https://github.com/user-attachments/assets/41ded67c-781e-4f55-90ff-e8190993696e" />|
-| **Slab** |  Estuche rígido de plástico transparente termosellado e imposible de abrir en cuyo interior queda protegida una carta gradeada junto a su etiqueta de certificación oficial. | <img width="712" height="1200" alt="Slab" src="https://github.com/user-attachments/assets/81598617-2a49-4908-b8e6-c6c4c27e2ead" />|
+| **Rareza** | Categorización asignada oficialmente a una carta que determina su probabilidad de aparición en sobres de cartas (Común, Infrecuente, Holo Rare, Ultra Rare, Illustration rare, Special Ilustration Rare, Hyper Rare, etc...). | <img width="60" height="42" alt="image" src="https://github.com/user-attachments/assets/41ded67c-781e-4f55-90ff-e8190993696e" />|
+| **Slab** |  Estuche rígido de plástico transparente termosellado e imposible de abrir en cuyo interior queda protegida una carta gradeada junto a su etiqueta de certificación oficial. | <img width="356" height="600" alt="Slab" src="https://github.com/user-attachments/assets/81598617-2a49-4908-b8e6-c6c4c27e2ead" />|
 | **Sleeve** |  Funda de plástico suave y fina ajustada para evitar arañazos. | <img width="603" height="426" alt="Sleeve" src="https://github.com/user-attachments/assets/1be07e85-a88b-4e1c-80df-64c1b24c6f91" />|
 | **TCG (Trading Card Game)** |  Siglas en inglés de Juego de Cartas Coleccionables (JCC), género lúdico y de coleccionismo sobre el que opera el catálogo del sistema. | <img width="312" height="160" alt="Pokemon TCG" src="https://github.com/user-attachments/assets/256c8d1a-7407-4b5b-a3d4-fca696e2a77a" />|
 | **Toploader** |  Funda de plástico rígido donde se inserta la carta previamente enfundada para impedir dobleces durante el almacenaje o el transporte. | <img width="1599" height="1284" alt="Toploader" src="https://github.com/user-attachments/assets/9e8c1d5e-b441-4674-9ea0-82f77808d5d1" />|
@@ -53,6 +53,24 @@ Nuestra plataforma Pokehub dará respuesta a estas espectativas garantizando la 
 ## 3. Visión general del sistema
 
 ### 3.1. Requisitos generales
+
+**R.G.01. Intermediación en el mercado secundario de cartas coleccionables**
+El sistema debe proporcionar una plataforma web que actúe como punto de encuentro seguro entre compradores y vendedores particulares de cartas de Pokémon TCG, facilitando la publicación de ofertas, la búsqueda de artículos y la gestión de compras.
+
+**R.G.02. Desacoplamiento entre catálogo y oferta física**
+El sistema debe mantener una separación estricta entre el catálogo oficial de cartas y los ejemplares físicos puestos a la venta por los usuarios.
+
+**R.G.03. Cobertura completa del ciclo de compraventa**
+La aplicación debe cubrir de principio a fin el flujo de las transacciones, desde la adición de artículos a una cesta de la compra y la formalización de pedidos con precios congelados, hasta el seguimiento del estado del envío y la confirmación final de recepción por parte del comprador.
+
+**R.G.04. Sistema de reputación y fomento de la confianza**
+El sistema debe implementar mecanismos objetivos para minimizar el fraude y medir la fiabilidad de las operaciones, incluyendo un sistema de valoraciones accesible públicamente, control de códigos de certificación oficial para cartas gradeadas e historial de transacciones.
+
+**R.G.05. Despliegue en entorno web multiplataforma**
+La aplicación debe ser completamente accesible a través de navegadores web estándar sin requerir la instalación de software cliente adicional ni extensiones locales por parte del usuario, garantizando un funcionamiento fluido en dispositivos móviles, tabletas y ordenadores de escritorio.
+
+**R.G.06. Cumplimiento normativo y privacidad de datos**
+El sistema debe garantizar el cumplimiento de la normativa vigente en materia de protección de datos, asegurando el tratamiento confidencial de la información personal de los usuarios (direcciones de envío, nombres y correos), el cifrado en el almacenamiento de credenciales y la restricción de acceso a información privada exclusivamente a las partes involucradas en cada pedido.
 
 ### 3.2. Usuarios del sistema
 
