@@ -103,10 +103,9 @@ quiero buscar cartas mediante filtros por nombre, expansión y rareza
 para consultar rápidamente las ofertas.
 
 **Prueba de aceptación**
-- Descripción de la primera comprobación a realizar
-- Descripción de la segunda comprobación a realizar
-- Se debe aplicar la regla de negocio R.N.XX.
-- ...
+- Se introducen un solo filtro, aparecen cartas en base solo a ese filtro.
+- Se introduce dos o más filtros, aparecen cartas en base a esos filtros.
+- No se devuelve ninguna carta al aplicar filtros, por lo que no hay ofertas específicas para esa búsqueda.
 
 #### R.F.02. Publicar un ejemplar a la venta
 Como vendedor
@@ -116,10 +115,10 @@ quiero crear una oferta de una carta del catálogo donde se indica su estado de 
 para ponerla en venta en la página.
 
 **Prueba de aceptación**
-- Descripción de la primera comprobación a realizar
-- Descripción de la segunda comprobación a realizar
-- Se debe aplicar la regla de negocio R.N.XX.
-- ...
+- Se registra una carta nueva, se crea la oferta y se publica en el catálogo.
+- Se registra una carta gradeada, una empresa certificadora le asigna un código de verificación único al ser gradeada, se crea la oferta y se publica en el catálogo.
+- Se registra una carta gradeada, una empresa certificadora le asigna un código de verificación que es idéntico a otro, se recibe un mensaje de error.
+- Se debe aplicar la regla de negocio R.N.05.
 
 #### R.F.03. Tramitar y pagar un pedido
 Como comprador
@@ -129,10 +128,11 @@ quiero formalizar el pago de las cartas seleccionadas
 para asegurar el precio fijado y descontar de inmediato las unidades del stock.
 
 **Prueba de aceptación**
-- Descripción de la primera comprobación a realizar
-- Descripción de la segunda comprobación a realizar
-- Se debe aplicar la regla de negocio R.N.XX.
-- ...
+- Se realiza el pago correctamente, se tramita el pedido y la transacción se completa correctamente. Tras esto, el stock de las unidades disminuye.
+- Se produce un error en el trámita (datos bancarios incorrectos, saldo monetario insuficiente, etc.), por lo que se muestra un mensaje de error.
+- Se debe aplicar la regla de negocio R.N.01.
+- Se debe aplicar la regla de negocio R.N.02.
+- Se debe aplicar la regla de negocio R.N.03.
 
 #### R.F.04. Gestionar el seguimiento del envío
 Como vendedor
@@ -142,10 +142,8 @@ quiero actualizar el estado de la compra e introducir el código de envío
 para que el comprador pueda rastrear la entrega de su paquete.
 
 **Prueba de aceptación**
-- Descripción de la primera comprobación a realizar
-- Descripción de la segunda comprobación a realizar
-- Se debe aplicar la regla de negocio R.N.XX.
-- ...
+- Tras ser tramitado el pedido, se actualiza el estado de este introduciendo el código, permitiendo así ver al comprador el estado de su envío.
+- El estado del pedido se actualiza pero no se introduce el código de envío, se recibe un mensaje de error.
 
 #### R.F.05. Valorar al vendedor tras la compra
 Como comprador
@@ -155,10 +153,9 @@ quiero calificar con estrellas y dejar una reseña sobre un pedido entregado
 para reflejar la reputación del vendedor en la plataforma.
 
 **Prueba de aceptación**
-- Descripción de la primera comprobación a realizar
-- Descripción de la segunda comprobación a realizar
-- Se debe aplicar la regla de negocio R.N.XX.
-- ...
+- Tras la entrega, se realiza una calificación redactando una reseña y valorando con estrellas. Esta se publica y actualiza la reputación del vendedor.
+- Se intenta publicar una reseña antes de la entrega del pedido, por lo que se recibe un mensaje de error.
+- Se debe aplicar la regla de negocio R.N.04.
 
 #### R.F.06. Gestionar el carrito de la compra
 Como comprador
@@ -168,10 +165,13 @@ quiero añadir ejemplares a mi cesta, modificar unidades o eliminarlos
 para revisar el precio total de mis artículos antes de realizar la compra.
 
 **Prueba de aceptación**
-- Descripción de la primera comprobación a realizar
-- Descripción de la segunda comprobación a realizar
-- Se debe aplicar la regla de negocio R.N.XX.
-- ...
+- Se selecciona un ejemplar y sus unidades, este se agrega al carrito y se muestra el precio total.
+- Se modifica el número de unidades de un ejemplar que ya está en el carrito, se observa el carrito y se observa que el número de unidades ha aumentado o disminuido.
+- Se selecciona un ejemplar que no está en el carrito, este se agrega al carrito y se observa que aparece junto al resto de ejemplares que ya estaban en el carrito.
+- Al eliminar un ejemplar del carrito, se observa que este no aparece en el carrito, ni tampoco sus unidades.
+- Al eliminar una o más unidades de un ejemplar, se observa en el carrito que el número de unidades decrece.
+- Se debe aplicar la regla de negocio R.N.01.
+- Se debe aplicar la regla de negocio R.N.03.
 
 #### 4.1.1. Requisitos de información
 
@@ -183,9 +183,10 @@ quiero que el sistema almacene mis credenciales, datos personales y dirección d
 para autenticarme de forma segura y recibir los pedidos en mi domicilio.
 
 **Prueba de aceptación**
-- Descripción de la primera comprobación a realizar
-- Descripción de la segunda comprobación a realizar
-- ...
+- Se rellenan todos los campos, permitiendo el correcto registro en la plataforma. 
+- Se dejan campos sin rellenar, se muestra un mensaje de error, ya que es necesario rellenarlos todos.
+- Se utilizan datos personales y credenciales inválidos o ya existentes, por lo que se recibe un mensaje de error.
+- Se modifican algunos datos del perfil del usuario, estos se guardan y aplican correctamente a dicho perfil.
 
 #### R.I.02. Información de colecciones oficiales
 Como coleccionista o visitante
@@ -195,9 +196,8 @@ quiero consultar los datos de cada expansión (nombre, serie y fecha de lanzamie
 para explorar el catálogo agrupado por sus ediciones oficiales.
 
 **Prueba de aceptación**
-- Descripción de la primera comprobación a realizar
-- Descripción de la segunda comprobación a realizar
-- ...
+- Las expansiones están listadas de manera ordenada mostrando sus datos.
+- Al acceder a una, se pueden ver todas las cartas pertenecientes a dicha expansión.
 
 #### R.I.03. Catálogo oficial de cartas
 Como usuario del sistema
@@ -207,10 +207,9 @@ quiero disponer de la ficha técnica de cada carta (nombre, numeración, tipo y 
 para identificar correctamente el artículo al comprar o vender.
 
 **Prueba de aceptación**
-- Descripción de la primera comprobación a realizar
-- Descripción de la segunda comprobación a realizar
-- ...
-
+- Al seleccionar una carta se obtiene su ficha técnica mostrando todos sus datos.
+- Se introducen los datos en el buscador y este devuelve la ficha técnica de la carta buscada, mostrando los datos introducidos en el buscador.
+  
 #### R.I.04. Ejemplares físicos en venta
 Como vendedor
 
@@ -219,9 +218,9 @@ quiero registrar la información de mi carta física (estado de conservación, i
 para que los compradores conozcan las características exactas del ejemplar que pongo a la venta.
 
 **Prueba de aceptación**
-- Descripción de la primera comprobación a realizar
-- Descripción de la segunda comprobación a realizar
-- ...
+- Se rellenan todos los campos y se registra la carta en el sistema.
+- Desde el punto de vista del comprador, se visualizan todos los datos publicados por el vendedor.
+- Se dejan campos de registro vacíos al registrar la carta, se recibe mensaje de error, todos los campos deben estar completos para poder publicar la oferta.
 
 #### R.I.05. Carrito de la compra
 Como comprador
@@ -231,9 +230,9 @@ quiero que el sistema conserve los ejemplares seleccionados y las unidades solic
 para calcular el precio provisional y mantener los artículos listos antes de pagar.
 
 **Prueba de aceptación**
-- Descripción de la primera comprobación a realizar
-- Descripción de la segunda comprobación a realizar
-- ...
+- Se seleccionan una serie de ejemplares y sus respectivas unidades a solicitar, se observa el carrito y aparecen dichos ejemplares y unidades solicitadas en este, con su precio provisional calculado.
+- En caso de modificación de ejemplares o sus unidades, se modifica el carrito para que conserve los nuevos productos y recalcula el precio provisional.
+
 
 #### R.I.06. Pedidos y transacciones realizadas
 Como comprador o vendedor
@@ -243,9 +242,8 @@ quiero registrar el desglose del pedido con los precios congelados, estado y dat
 para tener una factura de la transacción y gestionar su entrega.
 
 **Prueba de aceptación**
-- Descripción de la primera comprobación a realizar
-- Descripción de la segunda comprobación a realizar
-- ...
+- Tras realizar la compra se comprueba la factura, donde se muestra detalladamente el precio congelado, estado y los datos de envío en el momento de la adquisición.
+- El comprador y el vendedor ven la misma factura de la transacción.
 
 #### 4.1.2. Reglas de negocio
 
