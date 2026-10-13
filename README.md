@@ -35,18 +35,31 @@ Nuestra plataforma Pokehub dará respuesta a estas espectativas garantizando la 
 
 
 -Carta de Catálogo (Ficha Canónica): Representación abstracta y oficial de una carta en el sistema, independiente de cualquier copia física. Contiene los datos inmutables definidos por el fabricante (nombre del Pokémon o entrenador, tipo elemental, puntos de salud, ilustrador, rareza y número dentro de la colección).
+
 -Carta raw: Carta física coleccionable que no ha sido enviada a gradear ni sellada en una cápsula rígida por ninguna empresa de gradeo.
+
 -Colección / Expansión (Set): Conjunto oficial cerrado de cartas lanzadas al mercado en una fecha concreta bajo una serie o era determinada. Define la numeración de las cartas que contiene.
+
 -Empresa Certificadora / Empresa de gradeo: Entidad externa e independiente (como PSA, Beckett/BGS o CGC) dedicada a autenticar cartas coleccionables, evaluar su estado de conservación microscópico y encapsularlas de forma permanente.
+
 -Estado de Conservación: Métrica estándar utilizada en el mercado secundario para clasificar el desgaste físico de una carta no gradeada. Las categorías habituales incluyen Mint/Near Mint (NM, impecable o con desgaste casi imperceptible), Lightly Played (LP, marcas leves o micro-rozaduras), Moderately Played (MP, bordes blanqueados o pliegues menores) y Damaged/Poor (daños severos, arrugas o manchas)
+
 -Graduación (Grading): Calificación numérica (habitualmente en una escala del 1 al 10) otorgada por una empresa certificadora que puntua el centrado, las esquinas, los bordes y la superficie de la carta física
+
 -Idioma de Impresión: Lenguaje en el que fue fabricada la carta. Afecta directamente al valor de mercado del artículo; las impresiones más cotizadas y comercializadas son en japonés (JP) e inglés (EN), seguidas por las ediciones en español (ES) y otros idiomas europeos.
+
 -Número de Carta: Fracción impresa en la esquina inferior de la carta que indica su posición respecto al total oficial del set (por ejemplo, 025/165)
+
 -Número de Certificación: Código único e irrepetible emitido por la empresa certificadora e impreso en la etiqueta del slab. Sirve para validar la autenticidad del ejemplar en la base de datos pública del gradeador.
+
 -Rareza: Categorización asignada oficialmente a una carta que determina su probabilidad de aparición en sobres de cartas (Común, Infrecuente, Holo Rare, Ultra Rare, Illustration rare, Special Ilustration Rare, Hyper Rare, etc...)
+
 -Slab: Estuche rígido de plástico transparente termosellado e imposible de abrir en cuyo interior queda protegida una carta gradeada junto a su etiqueta de certificación oficial.
+
 -Sleeve: Funda de plástico suave y fina ajustada para evitar arañazos.
+
 -TCG (Trading Card Game): Siglas en inglés de Juego de Cartas Coleccionables (JCC), género lúdico y de coleccionismo sobre el que opera el catálogo del sistema.
+
 -Toploader: Funda de plástico rígido donde se inserta la carta previamente enfundada para impedir dobleces durante el almacenaje o el transporte.
 
 
