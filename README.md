@@ -319,19 +319,33 @@ para evitar que dos usuarios adquieran el mismo ejemplar físico a la vez y prev
 
 ## 6. Matrices de trazabilidad
 
-- Matriz de trazabilidad entre los elementos del modelo conceptual y los requisitos.
+## 6. Matrices de trazabilidad
 
-|       | EntidadX   | AsociaciónX  | RestricciónX  | Entidad2 ...   | 
-|:------|:-----------|:-----------|:-----------|:-----------|
-| RI-1  | X          | X          | X          | X          |
-| RI-2  |            | X          |            | X          |
-| RF-1  |            | X          |            | X          |
-| RF-2  | X          |            | X          | X          |
-| RN-1  |            | X          |            |            |
-| RN-2  | X          | X          | X          |            |
-| ...   |            |            |            |            |
+* Matriz de trazabilidad entre los elementos del modelo conceptual y los requisitos.
 
--- fin entregable 2 --
+| | Entidad `Usuario` | Entidad `Coleccion` | Entidad `CartaCatalogo` | Entidad `EjemplarEnVenta` | Entidad `Certificacion` | Entidad `ItemCarrito` | Entidad `Pedido` | Entidad `LineaPedido` | Entidad `Valoracion` | Asoc. `compone` (`Coleccion`-`Carta`) | Asoc. `se instancia en` (`Carta`-`Ejemplar`) | Asoc. `publica` (`Usuario`-`Ejemplar`) | Asoc. `acredita` (`Ejemplar`-`Certificacion`) | Asoc. `posee` / `selecciona` (`Carrito`) | Asoc. `formaliza` / `contiene` / `adquiere` (`Pedido`) | Asoc. `genera` / `emite` (`Valoracion`) | Restr. `NoAutocompra` | Restr. `PrecioCongelado` | Restr. `ControlStock` | Restr. `ElegibilidadUnicidadVal` | Restr. `UnicidadCertificado` |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **R.I.01** | X | | | | | | | | | | | X | | X | X | X | | | | | |
+| **R.I.02** | | X | | | | | | | | X | | | | | | | | | | | |
+| **R.I.03** | | | X | | | | | | | X | X | | | | | | | | | | |
+| **R.I.04** | | | | X | X | | | | | | X | X | X | | | | | | X | | X |
+| **R.I.05** | | | | | | X | | | | | | | | X | | | X | | X | | |
+| **R.I.06** | | | | | | | X | X | X | | | | | | X | X | X | X | X | X | |
+| **R.F.01** | | X | X | | | | | | | X | | | | | | | | | | | |
+| **R.F.02** | | X | | | | | | | | | | | | | | | | | | | |
+| **R.F.03** | X | | X | X | | | | | | | X | X | | | | | | | X | | |
+| **R.F.04** | X | X | X | X | X | | | | | X | X | X | X | | | | | | | | X |
+| **R.F.05** | X | | X | X | | X | | | | | X | | | X | | | X | | X | | |
+| **R.F.06** | X | X | X | X | X | | | | | X | X | X | X | | | | | | X | | |
+| **R.F.07** | X | | | | | | X | | | | | | | | X | | | | | | |
+| **R.F.08** | X | | X | X | | | X | X | | | X | X | | | X | | | X | | | |
+| **R.F.09** | X | | X | X | | | X | X | | | X | X | | | X | | | | | | |
+| **R.F.10** | X | | | X | | | X | X | X | | | X | | | X | X | | | | X | |
+| **R.N.01** | X | | | X | | X | X | X | | | | X | | X | X | | X | | | | |
+| **R.N.02** | | | | X | | | X | X | | | | | | | X | | | X | | | |
+| **R.N.03** | | | | X | | X | X | X | | | | | | X | X | | | | X | | |
+| **R.N.04** | X | | | | | | X | | X | | | | | | X | X | | | | X | |
+| **R.N.05** | | | | X | X | | | | | | | | X | | | | | | | | X |
 
 ## 7. Modelo relacional en 3FN
 
