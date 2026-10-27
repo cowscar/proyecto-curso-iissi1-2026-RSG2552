@@ -310,7 +310,8 @@ para evitar que dos usuarios adquieran el mismo ejemplar físico a la vez y prev
 
 ### 5.1. Diagramas de clases UML
 
-- con restricciones.
+<img width="1280" height="768" alt="WhatsApp Image 2026-10-27 at 14 08 20" src="https://github.com/user-attachments/assets/fad92b20-01d4-4f33-8c59-1e9cba884aa6" />
+
 
 ### 5.2. Escenarios de prueba
 
