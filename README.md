@@ -54,23 +54,14 @@ Nuestra plataforma Pokehub dará respuesta a estas espectativas garantizando la 
 
 ### 3.1. Requisitos generales
 
-**R.G.01. Intermediación en el mercado secundario de cartas coleccionables**
-El sistema debe proporcionar una plataforma web que actúe como punto de encuentro seguro entre compradores y vendedores particulares de cartas de Pokémon TCG, facilitando la publicación de ofertas, la búsqueda de artículos y la gestión de compras.
+#### R.G.01. Plataforma de compraventa con catálogo desacoplado
+El sistema debe proporcionar un punto de encuentro web seguro para compradores y vendedores particulares de cartas de Pokémon TCG, manteniendo una separación estricta entre el catálogo oficial canónico (referencia abstracta de colecciones, numeración y rarezas) y los ejemplares físicos puestos a la venta (artículos reales definidos por su estado de conservación, idioma, fotografías y precio fijado por el vendedor).
 
-**R.G.02. Desacoplamiento entre catálogo y oferta física**
-El sistema debe mantener una separación estricta entre el catálogo oficial de cartas y los ejemplares físicos puestos a la venta por los usuarios.
+#### R.G.02. Gestión integral de transacciones y sistema de confianza
+La aplicación debe cubrir todo el flujo comercial (carrito de compra temporal, formalización de pedidos con precios congelados, seguimiento logístico y confirmación de entrega) e integrar mecanismos antifraude basados en un sistema público de valoraciones y en la verificación de códigos únicos de certificación para cartas gradeadas.
 
-**R.G.03. Cobertura completa del ciclo de compraventa**
-La aplicación debe cubrir de principio a fin el flujo de las transacciones, desde la adición de artículos a una cesta de la compra y la formalización de pedidos con precios congelados, hasta el seguimiento del estado del envío y la confirmación final de recepción por parte del comprador.
-
-**R.G.04. Sistema de reputación y fomento de la confianza**
-El sistema debe implementar mecanismos objetivos para minimizar el fraude y medir la fiabilidad de las operaciones, incluyendo un sistema de valoraciones accesible públicamente, control de códigos de certificación oficial para cartas gradeadas e historial de transacciones.
-
-**R.G.05. Despliegue en entorno web multiplataforma**
-La aplicación debe ser completamente accesible a través de navegadores web estándar sin requerir la instalación de software cliente adicional ni extensiones locales por parte del usuario, garantizando un funcionamiento fluido en dispositivos móviles, tabletas y ordenadores de escritorio.
-
-**R.G.06. Cumplimiento normativo y privacidad de datos**
-El sistema debe garantizar el cumplimiento de la normativa vigente en materia de protección de datos, asegurando el tratamiento confidencial de la información personal de los usuarios (direcciones de envío, nombres y correos), el cifrado en el almacenamiento de credenciales y la restricción de acceso a información privada exclusivamente a las partes involucradas en cada pedido.
+#### R.G.03. Accesibilidad web multiplataforma y privacidad como norma
+El sistema debe operar como cliente ligero accesible desde navegadores web (en móvil, tablet y escritorio) sin requerir instalaciones locales, garantizando en todo momento el cumplimiento de la normativa de protección de datos, el cifrado de credenciales y la confidencialidad de los datos personales entre las partes de cada pedido.
 
 ### 3.2. Usuarios del sistema
 **Usuario visitante**
@@ -95,156 +86,163 @@ Es el responsable de velar por la seguridad de la información y la continuidad 
 
 ### 4.1. Requisitos funcionales
 
-#### R.F.01. Buscar y filtrar cartas en el catálogo
-Como usuario visitante o comprador
+#### R.F.01. Consultar y filtrar cartas del catálogo oficial
 
-quiero buscar cartas mediante filtros por nombre, expansión y rareza
+Como usuario visitante o comprador  
+quiero consultar el listado de cartas del catálogo filtrando por nombre, colección, rareza o tipo elemental  
+para localizar la ficha técnica oficial de las cartas que me interesan.
 
-para consultar rápidamente las ofertas.
+#### R.F.02. Consultar el listado de colecciones y expansiones
 
-**Prueba de aceptación**
-- Se introducen un solo filtro, aparecen cartas en base solo a ese filtro.
-- Se introduce dos o más filtros, aparecen cartas en base a esos filtros.
-- No se devuelve ninguna carta al aplicar filtros, por lo que no hay ofertas específicas para esa búsqueda.
+Como coleccionista o visitante  
+quiero consultar todas las colecciones registradas ordenadas por serie y fecha de lanzamiento  
+para conocer las ediciones oficiales disponibles en el sistema y el tamaño de cada set.
 
-#### R.F.02. Publicar un ejemplar a la venta
-Como vendedor
+#### R.F.03. Consultar ofertas activas de una carta concreta
 
-quiero crear una oferta de una carta del catálogo donde se indica su estado de conservación, fotos de la carta y el precio
+Como comprador  
+quiero consultar todos los ejemplares en estado "Activo" asociados a una carta del catálogo, pudiendo filtrar por idioma, estado de conservación y rango de precio  
+para comparar las distintas opciones de compra y elegir la oferta que mejor se adapte a mi presupuesto.
 
-para ponerla en venta en la página.
+#### R.F.04. Consultar el detalle completo de un ejemplar y su certificación
 
-**Prueba de aceptación**
-- Se registra una carta nueva, se crea la oferta y se publica en el catálogo.
-- Se registra una carta gradeada, una empresa certificadora le asigna un código de verificación único al ser gradeada, se crea la oferta y se publica en el catálogo.
-- Se registra una carta gradeada, una empresa certificadora le asigna un código de verificación que es idéntico a otro, se recibe un mensaje de error.
-- Se debe aplicar la regla de negocio R.N.05.
+Como comprador  
+quiero consultar la vista detallada de una publicación (incluyendo fotografías reales, stock, vendedor y datos de graduación/código de certificado si es un *slab*)  
+para verificar el estado físico y la autenticidad de la carta antes de añadirla al carrito.
 
-#### R.F.03. Tramitar y pagar un pedido
-Como comprador
+#### R.F.05. Consultar el contenido y subtotal del carrito de la compra
 
-quiero formalizar el pago de las cartas seleccionadas
+Como comprador  
+quiero consultar los ejemplares que tengo guardados actualmente en mi carrito junto con las unidades seleccionadas y el importe total acumulado  
+para revisar el coste provisional de mi cesta antes de tramitar el pedido.
 
-para asegurar el precio fijado y descontar de inmediato las unidades del stock.
+#### R.F.06. Consultar el inventario de publicaciones propias
 
-**Prueba de aceptación**
-- Se realiza el pago correctamente, se tramita el pedido y la transacción se completa correctamente. Tras esto, el stock de las unidades disminuye.
-- Se produce un error en el trámita (datos bancarios incorrectos, saldo monetario insuficiente, etc.), por lo que se muestra un mensaje de error.
-- Se debe aplicar la regla de negocio R.N.01.
-- Se debe aplicar la regla de negocio R.N.02.
-- Se debe aplicar la regla de negocio R.N.03.
+Como vendedor  
+quiero consultar el listado de todos los ejemplares que he puesto a la venta filtrando por su estado (Activa, Agotada o Retirada)  
+para llevar el control de mi stock disponible y de las cartas que ya se han vendido.
 
-#### R.F.04. Gestionar el seguimiento del envío
-Como vendedor
+#### R.F.07. Consultar el historial de pedidos realizados y su seguimiento
 
-quiero actualizar el estado de la compra e introducir el código de envío
+Como comprador  
+quiero consultar mis pedidos históricos y en curso junto con su estado actual y código de seguimiento logístico (*tracking*)  
+para rastrear el envío de mis paquetes y saber cuándo han sido entregados.
 
-para que el comprador pueda rastrear la entrega de su paquete.
+#### R.F.08. Consultar el desglose y factura de un pedido
 
-**Prueba de aceptación**
-- Tras ser tramitado el pedido, se actualiza el estado de este introduciendo el código, permitiendo así ver al comprador el estado de su envío.
-- El estado del pedido se actualiza pero no se introduce el código de envío, se recibe un mensaje de error.
+Como comprador o vendedor  
+quiero consultar las líneas de detalle de un pedido específico mostrando las cartas adquiridas, cantidades y los precios unitarios congelados en el momento de la compra  
+para disponer del justificante económico exacto de la transacción sin que afecten cambios posteriores de precio.
 
-#### R.F.05. Valorar al vendedor tras la compra
-Como comprador
+#### R.F.09. Consultar los pedidos pendientes de envío
 
-quiero calificar con estrellas y dejar una reseña sobre un pedido entregado
+Como vendedor  
+quiero consultar la lista de pedidos pagados que contienen ejemplares míos y que aún se encuentran pendientes de envío  
+para conocer la dirección de entrega de los compradores y preparar los paquetes correspondientes.
 
-para reflejar la reputación del vendedor en la plataforma.
+#### R.F.10. Consultar el perfil de reputación y valoraciones de un vendedor
 
-**Prueba de aceptación**
-- Tras la entrega, se realiza una calificación redactando una reseña y valorando con estrellas. Esta se publica y actualiza la reputación del vendedor.
-- Se intenta publicar una reseña antes de la entrega del pedido, por lo que se recibe un mensaje de error.
-- Se debe aplicar la regla de negocio R.N.04.
-
-#### R.F.06. Gestionar el carrito de la compra
-Como comprador
-
-quiero añadir ejemplares a mi cesta, modificar unidades o eliminarlos
-
-para revisar el precio total de mis artículos antes de realizar la compra.
-
-**Prueba de aceptación**
-- Se selecciona un ejemplar y sus unidades, este se agrega al carrito y se muestra el precio total.
-- Se modifica el número de unidades de un ejemplar que ya está en el carrito, se observa el carrito y se observa que el número de unidades ha aumentado o disminuido.
-- Se selecciona un ejemplar que no está en el carrito, este se agrega al carrito y se observa que aparece junto al resto de ejemplares que ya estaban en el carrito.
-- Al eliminar un ejemplar del carrito, se observa que este no aparece en el carrito, ni tampoco sus unidades.
-- Al eliminar una o más unidades de un ejemplar, se observa en el carrito que el número de unidades decrece.
-- Se debe aplicar la regla de negocio R.N.01.
-- Se debe aplicar la regla de negocio R.N.03.
+Como comprador  
+quiero consultar la puntuación media de un vendedor y el listado histórico de reseñas y comentarios dejados por otros compradores en sus pedidos entregados  
+para evaluar su fiabilidad antes de comprarle una carta.
 
 #### 4.1.1. Requisitos de información
 
-#### R.I.01. Registro y perfil de usuarios
-Como usuario de la plataforma
+##### R.I.01. Registro y perfil de usuarios
 
-quiero que el sistema almacene mis credenciales, datos personales y dirección de entrega
-
+Como usuario de la plataforma  
+quiero que el sistema almacene mis credenciales, datos personales y dirección de entrega  
 para autenticarme de forma segura y recibir los pedidos en mi domicilio.
 
-**Prueba de aceptación**
-- Se rellenan todos los campos, permitiendo el correcto registro en la plataforma. 
-- Se dejan campos sin rellenar, se muestra un mensaje de error, ya que es necesario rellenarlos todos.
-- Se utilizan datos personales y credenciales inválidos o ya existentes, por lo que se recibe un mensaje de error.
-- Se modifican algunos datos del perfil del usuario, estos se guardan y aplican correctamente a dicho perfil.
+* **Atributos asociados:**
+  * `idUsuario`: Identificador único del usuario.
+  * `nickname`: Nombre de usuario.
+  * `nombreCompleto`: Nombre y apellidos reales del usuario.
+  * `email`: Dirección de correo electrónico.
+  * `passwordHash`: Contraseña cifrada de acceso.
+  * `direccionPostal`: Calle, número, piso, ciudad, código postal y país.
+  * `fechaRegistro`: Fecha de alta en la plataforma.
+  * `reputacionMedia`: Valoración media calculada como vendedor (1 a 5).
 
-#### R.I.02. Información de colecciones oficiales
-Como coleccionista o visitante
+##### R.I.02. Información de colecciones oficiales
 
-quiero consultar los datos de cada expansión (nombre, serie y fecha de lanzamiento)
-
+Como coleccionista o visitante  
+quiero consultar los datos de cada expansión (nombre, serie y fecha de lanzamiento)  
 para explorar el catálogo agrupado por sus ediciones oficiales.
 
-**Prueba de aceptación**
-- Las expansiones están listadas de manera ordenada mostrando sus datos.
-- Al acceder a una, se pueden ver todas las cartas pertenecientes a dicha expansión.
+* **Atributos asociados:**
+  * `idColeccion`: Código o identificador único de la colección.
+  * `nombreColeccion`: Nombre oficial del set.
+  * `serie`: Era o bloque al que pertenece.
+  * `fechaLanzamiento`: Fecha oficial de salida al mercado.
+  * `totalCartasOficiales`: Número base de cartas que componen el set estándar.
 
-#### R.I.03. Catálogo oficial de cartas
-Como usuario del sistema
+##### R.I.03. Catálogo oficial de cartas
 
-quiero disponer de la ficha técnica de cada carta (nombre, numeración, tipo y rareza)
+Como usuario del sistema  
+quiero disponer de la ficha técnica de cada carta (nombre, numeración, tipo y rareza)  
+para identificar inequívocamente el artículo canónico al comprar o vender.
 
-para identificar correctamente el artículo al comprar o vender.
+* **Atributos asociados:**
+  * `idCarta`: Identificador único de la carta en el catálogo.
+  * `nombreCarta`: Nombre oficial del Pokémon, Entrenador o Energía.
+  * `numeroCarta`: Numeración secuencial dentro de su colección.
+  * `rareza`: Nivel de escasez oficial.
+  * `tipoCategoria`: Tipo elemental o subcategoría.
+  * `urlImagenOficial`: Enlace a la imagen de referencia del catálogo.
 
-**Prueba de aceptación**
-- Al seleccionar una carta se obtiene su ficha técnica mostrando todos sus datos.
-- Se introducen los datos en el buscador y este devuelve la ficha técnica de la carta buscada, mostrando los datos introducidos en el buscador.
-  
-#### R.I.04. Ejemplares físicos en venta
-Como vendedor
+##### R.I.04. Ejemplares físicos en venta
 
-quiero registrar la información de mi carta física (estado de conservación, idioma, fotos, precio y stock)
-
+Como vendedor  
+quiero registrar la información de mi carta física (estado de conservación, idioma, fotos, precio y stock)  
 para que los compradores conozcan las características exactas del ejemplar que pongo a la venta.
 
-**Prueba de aceptación**
-- Se rellenan todos los campos y se registra la carta en el sistema.
-- Desde el punto de vista del comprador, se visualizan todos los datos publicados por el vendedor.
-- Se dejan campos de registro vacíos al registrar la carta, se recibe mensaje de error, todos los campos deben estar completos para poder publicar la oferta.
+* **Atributos asociados:**
+  * `idPublicacion`: Identificador único de la oferta o ejemplar en venta.
+  * `estadoConservacion`: Estado físico de la carta.
+  * `idioma`: Idioma de impresión.
+  * `precioUnitario`: Importe de venta fijado por el vendedor.
+  * `stockDisponible`: Cantidad de unidades físicas iguales disponibles.
+  * `urlFotografiasReales`: Imagen o imágenes reales del ejemplar subidas por el vendedor.
+  * `estadoPublicacion`: Disponibilidad de la oferta.
+  * `esGraduada`: Indicador booleano de si la carta está certificada.
+  * `empresaCertificadora`: Entidad evaluadora si está graduada.
+  * `codigoCertificacion`: Código del certificado oficial.
+  * `notaGraduacion`: Calificación numérica oficial del 1 al 10 (si está graduada).
 
-#### R.I.05. Carrito de la compra
-Como comprador
+##### R.I.05. Carrito de la compra
 
-quiero que el sistema conserve los ejemplares seleccionados y las unidades solicitadas
+Como comprador  
+quiero que el sistema conserve los ejemplares seleccionados y las unidades solicitadas  
+para calcular el importe provisional y mantener los artículos listos antes de pagar.
 
-para calcular el precio provisional y mantener los artículos listos antes de pagar.
+* **Atributos asociados:**
+  * `idItemCarrito`: Identificador de la línea o elemento dentro del carrito.
+  * `cantidadSeleccionada`: Número de unidades del ejemplar que se desean comprar.
+  * `fechaAgregado`: Fecha y hora en que se introdujo el artículo en la cesta.
 
-**Prueba de aceptación**
-- Se seleccionan una serie de ejemplares y sus respectivas unidades a solicitar, se observa el carrito y aparecen dichos ejemplares y unidades solicitadas en este, con su precio provisional calculado.
-- En caso de modificación de ejemplares o sus unidades, se modifica el carrito para que conserve los nuevos productos y recalcula el precio provisional.
+##### R.I.06. Pedidos y transacciones realizadas
 
+Como comprador o vendedor  
+quiero registrar el desglose del pedido con los precios congelados, estado y datos de envío  
+para tener un justificante histórico de la transacción y gestionar su entrega logística.
 
-#### R.I.06. Pedidos y transacciones realizadas
-Como comprador o vendedor
-
-quiero registrar el desglose del pedido con los precios congelados, estado y datos de envío
-
-para tener una factura de la transacción y gestionar su entrega.
-
-**Prueba de aceptación**
-- Tras realizar la compra se comprueba la factura, donde se muestra detalladamente el precio congelado, estado y los datos de envío en el momento de la adquisición.
-- El comprador y el vendedor ven la misma factura de la transacción.
-
+* **Atributos asociados a la cabecera del Pedido:**
+  * `idPedido`: Identificador único de la transacción.
+  * `fechaHoraCompra`: Instante exacto de formalización del pago.
+  * `importeTotal`: Suma económica total del pedido.
+  * `estadoPedido`: Fase logística (*Pagado*, *Enviado*, *Entregado*, *Cancelado*).
+  * `direccionEntrega`: Dirección postal donde se envía el paquete.
+  * `codigoSeguimiento`: Código único proporcionado por la empresa de mensajería.
+* **Atributos asociados a la Línea de Pedido:**
+  * `idLineaPedido`: Identificador único de cada línea dentro del pedido.
+  * `cantidadComprada`: Unidades adquiridas de ese ejemplar concreto.
+  * `precioUnitarioCongelado`: Precio exacto al que se pagó la unidad en el momento de la compra.
+* **Atributos asociados a la Valoración del Pedido:**
+  * `puntuacion`: Calificación de 1 a 5 estrellas emitida por el comprador tras la entrega.
+  * `comentarioResena`: Texto sobre el trato, envío y estado de la carta.
+  * `fechaValoracion`: Fecha de emisión de la reseña.
+    
 #### 4.1.2. Reglas de negocio
 
 #### R.N.01. Prohibición de autocompra
